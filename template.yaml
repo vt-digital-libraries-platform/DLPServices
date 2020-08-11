@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  SAM Template for dlpservices
+
+Parameters:
+    NSTableName:
+      Type: String
+      Default: "minttable"
+    NOIDNAA:
+      Type: String
+      Default: "53696"
+    NOIDScheme:
+      Type: String
+      Default: "ark:/"
+    NOIDTemplate:
+      Type: String
+      Default: "eeddeede"
+    Region:
+      Type: String
+      Default: "us-east-1"
+    Image404:
+      Type: String
+      Default: "https://vtdlp-dev-cf.s3.amazonaws.com/404.png"
+
+Resources:
+  MintServiceApp:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location:
+        ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/mintservice
+        SemanticVersion: 1.0.0
+      Parameters:
+        NOIDNAA: !Ref NOIDNAA
+        NOIDScheme: !Ref NOIDScheme
+        NOIDTemplate: !Ref NOIDTemplate
+        NSTableName: !Ref NSTableName
+        Region: !Ref Region
+
+  ResolutionServiceApp:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location:
+        ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/resolutionservice
+        SemanticVersion: 1.0.0
+      Parameters:
+        Region: !Ref Region
+        Image404: !Ref Image404
+        TargetTableName: !Ref NSTableName
+
