@@ -29,7 +29,7 @@ Resources:
     Properties:
       Location:
         ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/mintservice
-        SemanticVersion: 1.1.0
+        SemanticVersion: 1.1.1
       Parameters:
         NOIDNAA: !Ref NOIDNAA
         NOIDScheme: !Ref NOIDScheme
