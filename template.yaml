@@ -28,7 +28,7 @@ Resources:
     Type: AWS::Serverless::Application
     Properties:
       Location:
-        ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/mintservice
+        ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/NoidMintService
         SemanticVersion: 1.1.1
       Parameters:
         NOIDNAA: !Ref NOIDNAA
@@ -41,8 +41,8 @@ Resources:
     Type: AWS::Serverless::Application
     Properties:
       Location:
-        ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/resolutionservice
-        SemanticVersion: 1.0.0
+        ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/NameResolutionService
+        SemanticVersion: 1.0.1
       Parameters:
         Region: !Ref Region
         Image404: !Ref Image404
