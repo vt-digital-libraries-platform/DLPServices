@@ -16,15 +16,18 @@ Click *Next* to continue
 
 #### Step 2: Specify stack details
 
-| Name | Description |
-|:---  |:------------|
-| Stack name | any valid name |
-| NSTableName | a DynamoDB table |
-| NOIDNAA | a valid string. e.g. 53696 |
-| NOIDScheme | ark:/ |
-| NOIDTemplate | a valid string. e.g. eeddeede |
-| Image404 | 404 Image URL |
-| REGION | a valid AWS region. e.g. us-east-1  |
+* <b>Stack name</b>: Stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).
+
+* <b>Parameters</b>: Parameters are defined in your template and allow you to input custom values when you create or update a stack.
+
+| Name | Description | Note |
+|:---  |:------------|:------------|
+| NSTableName | a DynamoDB table name | **Required** |
+| NOIDNAA | a valid string. e.g. 53696 | **Required** |
+| NOIDScheme | a valid string. e.g. ark:/ | **Required** |
+| NOIDTemplate | a valid string. e.g. eeddeede | **Required** |
+| Image404 | a valid URL. e.g. http://404.Image.png | **Required** |
+| REGION | a valid AWS region. e.g. us-east-1  | **Required** |
 
 #### Step 3: Configure stack options
 Leave it as is and click **Next**
@@ -34,7 +37,7 @@ Make sure all checkboxes under Capabilities section are **CHECKED**
 
 Click *Create stack*
 
-### Deploy VTDLP Resolution Service application using SAM CLI
+### Deploy VTDLP Resolution Service application using SAM CLI (For advanced users)
 
 To use the SAM CLI, you need the following tools.
 
@@ -60,3 +63,22 @@ Run the following in your shell to deploy the application to AWS:
 ```bash
 sam deploy --template-file packaged.yaml --stack-name STACKNAME --s3-bucket BUCKETNAME --parameter-overrides 'NSTableName=DDBTableName Region=us-east-1 Image404=https://images/404.jpg' --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND --region us-east-1
 ```
+
+The above command will package and deploy your application to AWS, with a series of prompts:
+
+- **Stack Name** (STACKNAME): (Required) The name of the AWS CloudFormation stack that you're deploying to. If you specify an existing stack, the command updates the stack. If you specify a new stack, the command creates it. This should be unique to your account and region, and a good starting point would be something matching your project name. Stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).
+- **S3 Bucket** (BUCKETNAME): (Required) An Amazon S3 bucket name where this command uploads your AWS CloudFormation template. S3 bucket name is globally unique, and the namespace is shared by all AWS accounts. See [Bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html). This S3 bucket should be already exist and you have the permission to upload files to it.
+- **Parameter Overrides**: A string that contains AWS CloudFormation parameter overrides encoded as key-value pairs. For example, ParameterKey=ParameterValue NSTableName=DDBTableName.
+
+    | Name | Description | Note |
+    |:---  |:------------|:------------|
+    | NSTableName | a DynamoDB table name | **Required** |
+    | NOIDNAA | a valid string. e.g. 53696 | **Required** |
+    | NOIDScheme | a valid string. e.g. ark:/ | **Required** |
+    | NOIDTemplate | a valid string. e.g. eeddeede | **Required** |
+    | Image404 | a valid URL. e.g. http://404.Image.png | **Required** |
+    | REGION | a valid AWS region. e.g. us-east-1  | **Required** |
+
+- **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modified IAM roles, the `CAPABILITY_IAM` and `CAPABILITY_AUTO_EXPAND` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND` to the `sam deploy` command. [Learn more](https://docs.amazonaws.cn/en_us/serverlessrepo/latest/devguide/acknowledging-application-capabilities.html).
+- **AWS Region**: The AWS region you want to deploy your app to.
+
