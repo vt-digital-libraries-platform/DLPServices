@@ -10,7 +10,7 @@ This CloudFormation currently deploys ID Minting service and Resolution service.
 
 ### Deploy VTDLP Services using CloudFormation stack
 #### Step 1: Launch CloudFormation stack
-[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?&templateURL=https://vtdlp-dev-cf.s3.amazonaws.com/8ed815b6ecf9d231cc07d862d50e85ef.template)
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?&templateURL=https://vtdlp-dev-cf.s3.amazonaws.com/793604d715ed316eb0cc49edf5c0f326.template)
 
 Click *Next* to continue
 
@@ -89,4 +89,4 @@ The above command will package and deploy your application to AWS, with a series
 
 After cloudformation is deployed successfully, you can see `ID Minting service` and `Resolution service` information in the `Resources` tab.
 
-    <img src="images/resource.png" width="300">
+<img src="images/resource.png" width="300">
