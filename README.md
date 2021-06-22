@@ -37,6 +37,11 @@ Make sure all checkboxes under Capabilities section are **CHECKED**
 
 Click *Create stack*
 
+#### Step 5: Finish
+After cloudformation is deployed successfully, you can see `ID Minting service` and `Resolution service` information in the `Resources` tab.
+
+<img src="images/resource.png" width="300">
+
 ### Deploy VTDLP Resolution Service application using SAM CLI (For advanced users)
 
 To use the SAM CLI, you need the following tools.
@@ -82,3 +87,6 @@ The above command will package and deploy your application to AWS, with a series
 - **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modified IAM roles, the `CAPABILITY_IAM` and `CAPABILITY_AUTO_EXPAND` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND` to the `sam deploy` command. [Learn more](https://docs.amazonaws.cn/en_us/serverlessrepo/latest/devguide/acknowledging-application-capabilities.html).
 - **AWS Region**: The AWS region you want to deploy your app to.
 
+After cloudformation is deployed successfully, you can see `ID Minting service` and `Resolution service` information in the `Resources` tab.
+
+    <img src="images/resource.png" width="300">
