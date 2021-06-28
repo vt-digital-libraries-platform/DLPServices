@@ -23,8 +23,8 @@ Click *Next* to continue
 | Name | Description | Note |
 |:---  |:------------|:------------|
 | NSTableName | a DynamoDB table name | **Required** |
-| NOIDNAA | a valid string. e.g. 53696 | **Required** |
-| NOIDScheme | a valid string. e.g. ark:/ | **Required** |
+| NOIDNAA | The character string equivalent for the NAAN; for example, 13960 corresponds to the NAA, "archive.org". e.g. 53696 | **Required** |
+| NOIDScheme | ARK (Archival Resource Key) identifier scheme that the noid utility was partly created to support. E.g. `ark:/` | **Required** |
 | NOIDTemplate | a valid string. e.g. eeddeede | **Required** |
 | Image404 | a valid URL. e.g. http://404.Image.png | **Required** |
 | REGION | a valid AWS region. e.g. us-east-1  | **Required** |
@@ -42,7 +42,7 @@ After cloudformation is deployed successfully, you can see `ID Minting service` 
 
 <img src="images/resource.png" width="300">
 
-### Deploy VTDLP Resolution Service application using SAM CLI (For advanced users)
+### Deploy VTDLP Services using SAM CLI (For advanced users)
 
 To use the SAM CLI, you need the following tools.
 
