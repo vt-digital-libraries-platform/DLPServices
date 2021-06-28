@@ -29,7 +29,7 @@ Resources:
     Properties:
       Location:
         ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/NoidMintService
-        SemanticVersion: 1.1.1
+        SemanticVersion: 1.1.2
       Parameters:
         NOIDNAA: !Ref NOIDNAA
         NOIDScheme: !Ref NOIDScheme
@@ -42,7 +42,7 @@ Resources:
     Properties:
       Location:
         ApplicationId: arn:aws:serverlessrepo:us-east-1:909117335741:applications/NameResolutionService
-        SemanticVersion: 1.0.1
+        SemanticVersion: 1.0.4
       Parameters:
         Region: !Ref Region
         Image404: !Ref Image404
