@@ -8,6 +8,8 @@ This CloudFormation currently deploys ID Minting service and Resolution service.
 * [ID Minting service](https://github.com/vt-digital-libraries-platform/mint)
 * [Resolution service](https://github.com/vt-digital-libraries-platform/resolution-service)
 
+You can use two different methods to deploy VTDLP Services. The first method is using CloudFormation stack and the second method is using SAM CLI.
+
 ### Deploy VTDLP Services using CloudFormation stack
 #### Step 1: Launch CloudFormation stack
 [![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?&templateURL=https://vtdlp-dev-cf.s3.amazonaws.com/793604d715ed316eb0cc49edf5c0f326.template)
