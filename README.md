@@ -27,7 +27,7 @@ Click *Next* to continue
 | NSTableName | a DynamoDB table name | **Required** |
 | NOIDNAA | The character string equivalent for the NAAN; for example, 13960 corresponds to the NAA, "archive.org". e.g. 53696 | **Required** |
 | NOIDScheme | ARK (Archival Resource Key) identifier scheme that the noid utility was partly created to support. E.g. `ark:/` | **Required** |
-| NOIDTemplate | A Template is a coded string of the form Prefix.Mask that is given to the noid dbcreate command to govern how identifiers will be minted. The Prefix, which may be empty, specifies an initial constant string. e.g. eeddeede | **Required** |
+| NOIDTemplate | A Template is a coded string of the form Prefix.Mask that is given to the noid dbcreate command to govern how identifiers will be minted. The Prefix, which may be empty, specifies an initial constant string. e.g. eeddeede. [Learn more](https://metacpan.org/dist/Noid/view/noid#TEMPLATES) | **Required** |
 | Image404 | a valid URL. e.g. http://404.Image.png | **Required** |
 | REGION | a valid AWS region. e.g. us-east-1  | **Required** |
 
@@ -82,9 +82,10 @@ The above command will package and deploy your application to AWS, with a series
     | NSTableName | a DynamoDB table name | **Required** |
     | NOIDNAA | The character string equivalent for the NAAN; for example, 13960 corresponds to the NAA, "archive.org". e.g. 53696 | **Required** |
     | NOIDScheme | ARK (Archival Resource Key) identifier scheme that the noid utility was partly created to support. E.g. `ark:/` | **Required** |
-    | NOIDTemplate | A Template is a coded string of the form Prefix.Mask that is given to the noid dbcreate command to govern how identifiers will be minted. The Prefix, which may be empty, specifies an initial constant string. e.g. eeddeede | **Required** |
+    | NOIDTemplate | A Template is a coded string of the form Prefix.Mask that is given to the noid dbcreate command to govern how identifiers will be minted. The Prefix, which may be empty, specifies an initial constant string. e.g. eeddeede. [Learn more](https://metacpan.org/dist/Noid/view/noid#TEMPLATES) | **Required** |
     | Image404 | a valid URL. e.g. http://404.Image.png | **Required** |
     | REGION | a valid AWS region. e.g. us-east-1  | **Required** |
+
 
 - **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modified IAM roles, the `CAPABILITY_IAM` and `CAPABILITY_AUTO_EXPAND` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND` to the `sam deploy` command. [Learn more](https://docs.amazonaws.cn/en_us/serverlessrepo/latest/devguide/acknowledging-application-capabilities.html).
 - **AWS Region**: The AWS region you want to deploy your app to.
